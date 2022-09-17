@@ -118,7 +118,7 @@ end)
 RegisterNetEvent('fishing:client:attemptTreasureChest', function()
 	local ped = PlayerPedId()
 	attemptTreasureChest()
-	QBCore.Functions.TriggerCallback('tgiann-base:item-kontrol', function(HasItem)
+	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
 		if HasItem then
 			QBCore.Functions.Progressbar("accepted_key", "Inserting Key..", (math.random(2000, 5000)), false, true, {
 				disableMovement = true,
@@ -260,8 +260,8 @@ catchAnimation = function()
 end
 
 fishAnimation = function()
-	QBCore.Functions.TriggerCallback("tgiann-base:item-kontrol", function(yemsayi)
-		if yemsayi > 0 then
+	QBCore.Functions.TriggerCallback('QBCore:HasItem', function(HasItem)
+		if HasItem then
 			local ped = PlayerPedId()
 			local animDict = "amb@world_human_stand_fishing@idle_a"
 			local animName = "idle_c"
